@@ -50,5 +50,6 @@ function App(props) {
     </div>
   );
 }
+// но тут далее у меня не получается как описании вывести внутри компонента App console.log(props.tasks);
 
 export default App;
