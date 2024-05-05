@@ -1,5 +1,7 @@
 import Todo from "./components/Todo";
 
+const taskList = props.tasks?.map((task) => task.name);
+
 function App(props) {
   return (
     <div className="todoapp stack-large">
@@ -43,13 +45,10 @@ function App(props) {
         role="list"
         className="todo-list stack-large stack-exception"
         aria-labelledby="list-heading">
-          <Todo name="Eat" id="todo-0" completed />
-          <Todo name="Sleep" id="todo-1" />
-          <Todo name="Repeat" id="todo-2" />
+        {taskList}
       </ul>
     </div>
   );
 }
-// но тут далее у меня не получается как описании вывести внутри компонента App console.log(props.tasks);
 
 export default App;
