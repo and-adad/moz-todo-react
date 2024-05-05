@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 function Todo(props) {
-
   const [isEditing, setEditing] = useState(false);
   const [newName, setNewName] = useState("");
 
@@ -38,7 +37,6 @@ function Todo(props) {
           Cancel
           <span className="visually-hidden">renaming {props.name}</span>
         </button>
-
         <button type="submit" className="btn btn__primary todo-edit">
           Save
           <span className="visually-hidden">new name for {props.name}</span>
@@ -46,6 +44,7 @@ function Todo(props) {
       </div>
     </form>
   );
+
   const viewTemplate = (
     <div className="stack-small">
       <div className="c-cb">
@@ -60,10 +59,14 @@ function Todo(props) {
         </label>
       </div>
       <div className="btn-group">
-      <button type="button" className="btn" onClick={() => setEditing(true)}>
-        Edit <span className="visually-hidden">{props.name}</span>
-      </button>
-
+        <button
+          type="button"
+          className="btn"
+          onClick={() => {
+            setEditing(true);
+          }}>
+          Edit <span className="visually-hidden">{props.name}</span>
+        </button>
         <button
           type="button"
           className="btn btn__danger"
@@ -73,7 +76,6 @@ function Todo(props) {
       </div>
     </div>
   );
-  
 
   return <li className="todo">{isEditing ? editingTemplate : viewTemplate}</li>;
 }
