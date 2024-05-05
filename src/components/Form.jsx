@@ -8,6 +8,14 @@ function Form(props) {
         event.preventDefault();
         props.addTask("Say hello!");
       }
+
+      function handleChange() {
+        console.log("Typing!");
+      }
+
+      function handleChange(event) {
+        console.log(event.target.value);
+      }
       
     return (
       <form onSubmit={handleSubmit}>
@@ -23,7 +31,8 @@ function Form(props) {
           name="text"
           autoComplete="off"
           value={name}
-        />
+          onChange={handleChange}
+        />;
 
         <button type="submit" className="btn btn__primary btn__lg">
           Add
