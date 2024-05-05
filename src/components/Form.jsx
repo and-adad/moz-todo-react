@@ -5,17 +5,18 @@ function Form(props) {
     const [name, setName] = useState("");
 
     function handleSubmit(event) {
-        event.preventDefault();
-        props.addTask("Say hello!");
-      }
+      event.preventDefault();
+      props.addTask(name);
+      setName("");
+    }
 
-      function handleChange() {
-        console.log("Typing!");
-      }
+    function handleChange() {
+      console.log("Typing!");
+    }
 
-      function handleChange(event) {
-        console.log(event.target.value);
-      }
+    function handleChange(event) {
+      setName(event.target.value);
+    }
       
     return (
       <form onSubmit={handleSubmit}>
