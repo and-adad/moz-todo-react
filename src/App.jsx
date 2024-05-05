@@ -23,6 +23,9 @@ function App(props) {
     const newTask = { id: `todo-${nanoid()}`, name, completed: false };
     setTasks([...tasks, newTask]);
   }
+
+  const headingText = `${taskList.length} tasks remaining`;
+
   
   return (
     <div className="todoapp stack-large">
